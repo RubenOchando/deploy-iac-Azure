@@ -4,7 +4,7 @@ on:
 name: Azure ARM Bicep
 jobs:
   build-and-deploy:
-    if: contains( github.event.pull_request.labels.*.name, 'spinup')  
+    if: ${{ github.event.pull_request.*.name == 'spinup') }}
     runs-on: ubuntu-latest
     steps:
 
@@ -33,7 +33,7 @@ jobs:
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-
+      if: ${{ github.event.pull_request.name contains 'destroy') }}
       # Destroy Resources
     - name: destroy
       uses: azure/arm-deploy@v1
