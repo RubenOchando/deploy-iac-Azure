@@ -1,4 +1,6 @@
-on: [pull_request]
+on: 
+  pull_request:
+    types: [ labeled ]
 name: Azure ARM
 jobs:
   build-and-deploy:
