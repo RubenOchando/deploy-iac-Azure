@@ -25,7 +25,7 @@ jobs:
         parameters: 'storagePrefix=git storageSKU=Standard_LRS'
         failOnStdErr: false
   Deleteresources:
-    if: contains ${{ github.event.pull_request.label.name == 'destroy' }}
+    if:  ${{ github.event.pull_request.label.name == 'destroy' }}
     runs-on: ubuntu-latest
     steps:
           # Checkout code
