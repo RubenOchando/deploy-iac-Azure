@@ -1,5 +1,6 @@
 targetScope = 'resourceGroup'
 
+param storagePrefix string ='git'
 param webAppName string = 'az400-github-ptroh' // Generate unique String for web app name
 param sku string = 'F1' // The SKU of App Service Plan
 param linuxFxVersion string = 'node|16-lts' // The runtime stack of web app
@@ -21,8 +22,8 @@ var webSiteName = toLower('wapp-${webAppName}')
 ])
 param storageSKU string = 'Standard_LRS'
 
-var uniqueStorageName = 'az400gitacstg'
 
+var uniqueStorageName = 'az400actstg'
 
 
 resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
