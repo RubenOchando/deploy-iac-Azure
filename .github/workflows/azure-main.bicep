@@ -23,7 +23,7 @@ var webSiteName = toLower('wapp-${webAppName}')
 param storageSKU string = 'Standard_LRS'
 
 
-var uniqueStorageName = 'az400actstg'
+var uniqueStorageName = 'az400stg${storagePrefix}'
 
 
 resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
