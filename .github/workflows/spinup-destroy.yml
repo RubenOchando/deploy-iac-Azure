@@ -26,7 +26,7 @@ jobs:
         parameters: 'storagePrefix=git storageSKU=Standard_LRS'
         failOnStdErr: false
   Delete-Resources:
-    if: contains( github.event.pull_request.title, 'destroy')
+
     runs-on: ubuntu-latest
     steps:
       # Log into Azure
