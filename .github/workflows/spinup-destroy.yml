@@ -1,10 +1,12 @@
 on: 
   pull_request:
     types: [ labeled ]
+  label:
+    types: [created, edited]
 name: Azure ARM
 jobs:
   build-and-deploy:
-    if: ${{ github.event.pull_request.labeled.name == 'spinup' }}
+    if: ${{ github.event.label.name == 'spinup' }}
    
     runs-on: ubuntu-latest
     steps:
@@ -27,7 +29,7 @@ jobs:
         parameters: 'storagePrefix=git storageSKU=Standard_LRS'
         failOnStdErr: false
   Deleteresources:
-    if:  ${{ github.event.pull_request.labeled.name == 'destroy' }}
+    if:  ${{ github.event.labbel.name == 'destroy' }}
     runs-on: ubuntu-latest
     steps:
           # Checkout code
