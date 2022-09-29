@@ -19,6 +19,6 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ secrets.AZURE_RG }}
-        template: azure-main.bicep
+        template: ./.github/workflows/azure-main.bicep
         parameters: 'storageSKU=Standard_LRS'
         failOnStdErr: false
