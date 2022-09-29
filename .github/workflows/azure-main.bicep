@@ -2,7 +2,7 @@ targetScope = 'resourceGroup'
 
 param storagePrefix string ='git'
 param webAppName string = 'az400-github-ptroh' // Generate unique String for web app name
-param sku string = 'F1' // The SKU of App Service Plan
+param sku string = 'B1' // The SKU of App Service Plan
 param linuxFxVersion string = 'node|16-lts' // The runtime stack of web app
 param location string = resourceGroup().location // Location for all resources
 param repositoryUrl string = 'https://github.com/Azure-Samples/nodejs-docs-hello-world'
