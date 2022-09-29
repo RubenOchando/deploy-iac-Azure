@@ -1,10 +1,10 @@
 on: 
   pull_request:
+    types: [opened]
 name: Azure ARM Bicep
 jobs:
   build-and-deploy:
-    if: github.event.label.name == 'spinup'
-   
+    if: contains( github.event.pull_request.labels.*.name, 'spinup')  
     runs-on: ubuntu-latest
     steps:
 
@@ -26,7 +26,7 @@ jobs:
         parameters: 'storagePrefix=git storageSKU=Standard_LRS'
         failOnStdErr: false
   Deleteresources:
-    if:  github.event.labbel.name == 'destroy'
+    if: contains( github.event.pull_request.labels.*.name, 'destroy')
     runs-on: ubuntu-latest
     steps:
           # Checkout code
