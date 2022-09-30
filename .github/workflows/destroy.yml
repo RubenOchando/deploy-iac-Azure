@@ -1,7 +1,7 @@
 on: 
   pull_request:
     types: [opened]
-name: Azure ARM Bicep
+name: Azure Delete Resource ARM Bicep
 jobs:
 
   Delete-Resources:
