@@ -35,8 +35,7 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
     - name: Display List
       run: | 
-          lsb_release -a
-          RUN dir -s
+           dir -s
       shell: bash
 
 
