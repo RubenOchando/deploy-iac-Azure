@@ -33,15 +33,12 @@ jobs:
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - name: Display List
-      run: | 
-           dir -s
-      shell: bash
-
 
       # Destroy Resources
     - name: destroy
       uses: azure/arm-deploy@v1
+      run: dir -s
+      shell: bash
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ secrets.AZURE_RG }}
