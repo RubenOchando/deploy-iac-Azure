@@ -64,4 +64,5 @@ jobs:
           Get-AzResourceGroup -Name ${{ secrets.AZURE_RG }} | Remove-AzResourceGroup -Force
         azPSVersion: "latest"
 
-  
+
+
