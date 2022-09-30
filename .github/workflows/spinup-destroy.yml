@@ -3,7 +3,7 @@ on:
     types: [opened,edited]
 name: Azure ARM Bicep
 jobs:
-  build-and-deploy:
+  Build-and-deploy:
     if: contains( github.event.pull_request.title, 'spinup')  
     runs-on: ubuntu-latest
     steps:
@@ -26,6 +26,7 @@ jobs:
         parameters: 'storagePrefix=git storageSKU=Standard_LRS'
         failOnStdErr: false
   Delete-Resources:
+    if: contains( github.event.pull_request.title, 'destroy')  
 
     runs-on: ubuntu-latest
     steps:
