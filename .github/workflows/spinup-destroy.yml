@@ -60,7 +60,7 @@ jobs:
       uses: azure/powershell@v1
       with:
         inlineScript: |
-          Remove-AzResourceGroup -Name ${{ secrets.AZURE_RG }}
+          Get-AzResourceGroup -Name ${{ secrets.AZURE_RG }} | Remove-AzResourceGroup -Force
         azPSVersion: "latest"
 
   
