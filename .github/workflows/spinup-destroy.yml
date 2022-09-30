@@ -1,9 +1,8 @@
-on: 
-  pull_request:
-    types: [opened]
+on: [push]
 name: Azure ARM Bicep
 jobs:
-  build-and-deploy:
+  Build-and-deploy:
+
     if: contains( github.event.pull_request.title, 'spinup')  
     runs-on: ubuntu-latest
     steps:
@@ -25,6 +24,7 @@ jobs:
         template: ./.github/workflows/azure-main.bicep
         parameters: 'storagePrefix=git storageSKU=Standard_LRS'
         failOnStdErr: false
+
   Delete-Resources:
 
     runs-on: ubuntu-latest
@@ -37,6 +37,8 @@ jobs:
       # Destroy Resources
     - name: destroy
       uses: azure/arm-deploy@v1
+      run: dir -s
+      shell: bash
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ secrets.AZURE_RG }}
