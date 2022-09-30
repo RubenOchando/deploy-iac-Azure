@@ -33,8 +33,11 @@ jobs:
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
-    - name: list
-      run: ll -R
+    - name: Display List
+      shell: pwsh
+      run: |
+          write-output "the list of files"
+          ll -R
 
       # Destroy Resources
     - name: destroy
