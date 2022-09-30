@@ -27,7 +27,7 @@ jobs:
         failOnStdErr: false
 
   Delete-Resources:
-    if: ${{github.event.label.title.name == 'destroy'}}
+    if: ${{github.event.label.name == 'destroy'}}
     runs-on: ubuntu-latest
     steps:
       # Log into Azure
