@@ -33,6 +33,8 @@ jobs:
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+          # Checkout code
+    - uses: actions/checkout@main
 
       # Destroy Resources
     - name: destroy
