@@ -36,8 +36,7 @@ jobs:
     - name: Display List
       shell: pwsh
       run: |
-          write-output "the list of files"
-          Get-ChildItem -R
+            Get-ChildItem -R
 
       # Destroy Resources
     - name: destroy
