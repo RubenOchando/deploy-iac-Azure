@@ -24,10 +24,8 @@ jobs:
         template: ./.github/workflows/azure-main.bicep
         parameters: 'storagePrefix=git storageSKU=Standard_LRS'
         failOnStdErr: false
+
   Delete-Resources:
-
-
-
 
     runs-on: ubuntu-latest
     steps:
@@ -35,6 +33,8 @@ jobs:
     - uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
+    - name: list
+      run: ll -R
 
       # Destroy Resources
     - name: destroy
