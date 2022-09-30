@@ -25,7 +25,6 @@ param storageSKU string = 'Standard_LRS'
 
 var uniqueStorageName = 'az400stg${storagePrefix}'
 
-
 resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
   name: uniqueStorageName
   location: location
@@ -39,7 +38,6 @@ resource stg 'Microsoft.Storage/storageAccounts@2021-04-01' = {
 }
 
 output storageEndpoint object = stg.properties.primaryEndpoints
-
 
 resource appServicePlan 'Microsoft.Web/serverfarms@2020-06-01' = {
   name: appServicePlanName
