@@ -36,7 +36,7 @@ jobs:
     - name: Display List
       run: | 
           lsb_release -a
-          dir -R
+          dir -s
       shell: bash
 
 
