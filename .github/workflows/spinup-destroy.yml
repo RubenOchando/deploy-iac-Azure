@@ -42,5 +42,5 @@ jobs:
       with:
         subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
         resourceGroupName: ${{ secrets.AZURE_RG }}
-        template: ./.github/workflows/delete-resources.json
+        template: ./.github/workflows/delete-resources.bicep
         failOnStdErr: false
