@@ -1,13 +1,13 @@
 
 on: 
   pull_request:
-    types: [ labeled ]
+    types: [ opened,labeled ]
 
 name: Azure ARM Bicep
 jobs:
   Build-and-deploy:
 
-    if: ${{github.event.pull_request.title.*.name == 'spinup'}}
+    if: contains(github.event.pull_request.labels.*.name, 'spinup')
     runs-on: ubuntu-latest
     steps:
 
