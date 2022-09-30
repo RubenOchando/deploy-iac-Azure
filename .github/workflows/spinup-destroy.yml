@@ -1,4 +1,7 @@
-on: [push, pull_request]
+
+on: 
+  pull_request:
+    types: [ labeled ]
 
 name: Azure ARM Bicep
 jobs:
@@ -27,7 +30,9 @@ jobs:
         failOnStdErr: false
 
   Delete-Resources:
-    if: ${{github.event.label.name == 'destroy'}}
+
+    if: contains(github.event.issue.labels.*.name, 'destroy')
+
     runs-on: ubuntu-latest
     steps:
       # Log into Azure
