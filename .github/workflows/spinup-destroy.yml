@@ -32,9 +32,7 @@ jobs:
 
   Delete-Resources:
 
-
     if: contains(github.event.pull_request.labels.*.name, 'destroy')
-
 
     runs-on: ubuntu-latest
     steps:
