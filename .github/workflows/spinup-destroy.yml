@@ -3,7 +3,7 @@ name: Azure ARM Bicep
 jobs:
   Build-and-deploy:
 
-    if: contains( github.event.pull_request.title, 'spinup')  
+    if: (github.event.pull_request.title.*.name == 'spinup')  
     runs-on: ubuntu-latest
     steps:
 
@@ -26,7 +26,7 @@ jobs:
         failOnStdErr: false
 
   Delete-Resources:
-
+    if: (github.event.pull_request.title.*.name == 'destroy')  
     runs-on: ubuntu-latest
     steps:
       # Log into Azure
