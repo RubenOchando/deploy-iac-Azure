@@ -37,7 +37,7 @@ jobs:
       shell: pwsh
       run: |
           write-output "the list of files"
-          ll -R
+          Get-ChildItem -R
 
       # Destroy Resources
     - name: destroy
