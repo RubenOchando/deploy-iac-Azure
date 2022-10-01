@@ -1,4 +1,3 @@
-targetScope = 'resourceGroup'
 
 param storagePrefix string ='git'
 param webAppName string = 'az400-github-ptroh' // Generate unique String for web app name
