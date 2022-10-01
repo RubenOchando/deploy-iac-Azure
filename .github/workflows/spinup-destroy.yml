@@ -29,31 +29,8 @@ jobs:
         parameters: 'storagePrefix=git storageSKU=Standard_LRS'
         failOnStdErr: false
 
-
   Delete-Resources:
-
     if: contains(github.event.pull_request.labels.*.name, 'destroy')
-
-    runs-on: ubuntu-latest
-    steps:
-      # Log into Azure
-    - uses: azure/login@v1
-      with:
-        creds: ${{ secrets.AZURE_CREDENTIALS }}
-          # Checkout code
-    - uses: actions/checkout@main
-
-      # Destroy Resources
-    - name: destroy
-      uses: azure/arm-deploy@v1
-
-      with:
-        subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
-        resourceGroupName: ${{ secrets.AZURE_RG }}
-        template: ./.github/workflows/delete-resources.bicep
-        failOnStdErr: false
-  
-  Run-Script:
     runs-on: ubuntu-latest
     steps:
         # Log into Azure
