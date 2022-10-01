@@ -11,7 +11,7 @@ env:
   ### Replace <username> with GitHub username ###
   ###############################################
   DOCKER_IMAGE_NAME: RubenOchando-azure-ttt
-  AZURE_WEBAPP_NAME: RubenOchando-ttt-app
+  AZURE_WEBAPP_NAME: wapp-az400-github-ptroh
   ###############################################
 
 jobs:
